@@ -1,8 +1,29 @@
 == Quarkus-Panache (Übung 03) - Philipp Auinger 5BHIF
 
 * Erstellen des Quarkus-Projekts mit:
+....
  mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \
         -DprojectGroupId=at.htl.supermarket \
         -DprojectArtifactId=quarkus-panache-supermarket \
         -DclassName="at.htl.supermarket.ProductResource" \
         -Dpath="product"
+....
+
+* Hinzufügen der nötigen Dependencies für diese Aufgabe im link:\quarkus-panache-supermarket\pom.xml[pom.xml]
+....
+<dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm</artifactId>
+</dependency>
+<dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm-panache</artifactId>
+</dependency>
+<dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-postgresql</artifactId>
+</dependency>
+....
+
+
+* Implementierung meines Microprojekts
