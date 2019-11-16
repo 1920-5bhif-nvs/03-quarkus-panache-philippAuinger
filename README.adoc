@@ -58,4 +58,29 @@ image::images/IDEDatabase.PNG[]
 Implementierung der link:quarkus-panache-supermarket\src\main\java\at\htl\supermarket\business\InitBean.java[InitBean.java]
 
 ==== Panache Entitäten
+TIP: Quelle: https://quarkus.io/guides/hibernate-orm-panache
 
+===== Beispiel Entität "Person":
+....
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn
+public class Person extends PanacheEntity {
+
+    public String firstname;
+    public String lastname;
+    public LocalDate birthdate;
+    public String mobilePhone;
+    public String email;
+
+    public Person(String firstname, String lastname, LocalDate birthdate, String mobilePhone, String email) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.mobilePhone = mobilePhone;
+        this.email = email;
+    }
+}
+....
+
+IMPORTANT: Bei Panache sollte man laut Tutorial keine Getter und Setter verwenden sondern die Felder public machen, außer man will die Daten zum Beispiel im GETTER verändern. (.toUpperCase bei Namen, usw.)
