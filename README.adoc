@@ -1,5 +1,7 @@
 == Quarkus-Panache (Übung 03) - Philipp Auinger 5BHIF
 
+=== Vorbereitung
+==== Quarkus
 * Erstellen des Quarkus-Projekts mit:
 ....
  mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \
@@ -25,5 +27,35 @@
 </dependency>
 ....
 
+==== Datenbank
 
-* Implementierung meines Microprojekts
+* Erstellen/Starten der Postgres Datenbank:
+....
+docker run --name supermarket-postgres -p 5432:5432 -e POSTGRES_PASSWORD=passme -d postgres
+....
+
+* Für die Persistierung das link:quarkus-panache-supermarket\src\main\resources\META-INF\microprofile-config.properties[Konfigurationsfile] editieren:
+....
+# datasource
+quarkus.datasource.url = jdbc:postgresql://192.168.99.100:5432/postgres
+quarkus.datasource.driver = org.postgresql.Driver
+quarkus.datasource.username = postgres
+quarkus.datasource.password = passme
+
+# database configs
+quarkus.hibernate-orm.database.generation = drop-and-create
+....
+
+* Datasource in der IDE hinzufügen:
+
+image::images/Datasource.PNG[]
+
+image::images/IDEDatabase.PNG[]
+
+=== Implementierung des Microprojects
+
+==== InitBean
+Implementierung der link:quarkus-panache-supermarket\src\main\java\at\htl\supermarket\business\InitBean.java[InitBean.java]
+
+==== Panache Entitäten
+
