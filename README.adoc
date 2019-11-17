@@ -177,5 +177,23 @@ Implementierung der link:quarkus-hibernate-supermarket\src\main\java\at\htl\supe
 IMPORTANT: Hier wird der EntityManager benötigt <EntityManager>.persist(<Entity>);
 
 ....
+@ApplicationScoped
+public class InitBean {
+
+    @Inject
+    EntityManager em;
+
+    @Transactional
+    void init(@Observes StartupEvent ev)
+    {
+        System.err.println("* Init started! *");
+        //Creation of objects to persist
+    }
+}
+....
+
+==== Entitäten
+===== Beispiel Entität "Person":
+....
 
 ....
