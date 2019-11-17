@@ -8,9 +8,8 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+:source-highlighter: coderay
 :toc:
-:toc-placement!:
-toc::[]
 
 == 01. Panache
 === Vorbereitung
