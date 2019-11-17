@@ -1,5 +1,5 @@
 = Übung 03 - Quarkus-Panache - Philipp Auinger 5BHIF
-:toc: left
+:toc: left1
 :toc-title: Inhaltsverzeichnis
 :toclevels: 3
 
@@ -70,8 +70,8 @@ Implementierung der link:quarkus-panache-supermarket\src\main\java\at\htl\superm
 
 TIP: Der EntityManager wird nicht mehr benötigt. <PanacheEntity-Object>.persist();
 ....
-        Product innocent_greensmoothie = new Product("Green Smoothie", 2.26, LocalDate.parse("19.12.2018",formatter), "Innocent",10,store);
-        innocent_greensmoothie.persist();
+Product innocent_greensmoothie = new Product("Green Smoothie", 2.26, LocalDate.parse("19.12.2018",formatter), "Innocent",10,store);
+innocent_greensmoothie.persist();
 ....
 
 ==== Panache Entitäten
@@ -119,8 +119,8 @@ Customer wird trotzdem in der Datenbank persistiert!
 
 ==== SQL - Abfragen mit Panache
 ....
-        PanacheQuery<Customer> query = Customer.find("SELECT c FROM Customer c JOIN Person p on c.id = p.id");
-        query.list().forEach(c -> System.err.print(c.toString()));
+PanacheQuery<Customer> query = Customer.find("SELECT c FROM Customer c JOIN Person p on c.id = p.id");
+query.list().forEach(c -> System.err.print(c.toString()));
 ....
 
 IMPORTANT: Laut dieser link:https://stackoverflow.com/a/23083900[StackOverflow-Answer] ist es *WICHTIG* bei Tabellen-Namen im SQL-Statement die Anfangsbuchstaben Groß zu schreiben und alle anderen klein.
@@ -135,6 +135,47 @@ image::quarkus-panache-supermarket/Klassendiagramm.png[]
 image::quarkus-panache-supermarket/ERD.png[]
 
 == 02. Hibernate
+=== Vorbereitung
+==== Quarkus
+* Erstellen des Quarkus-Projekts mit:
+....
+ mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \
+        -DprojectGroupId=at.htl.supermarket \
+        -DprojectArtifactId=quarkus-hibernate-supermarket \
+        -DclassName="at.htl.supermarket.ProductResource" \
+        -Dpath="product"
+....
 
+* Hinzufügen der nötigen Dependencies für diese Aufgabe im link:\quarkus-hibernate-supermarket\pom.xml[pom.xml]
+....
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-hibernate-orm</artifactId>
+</dependency>
+<dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-postgresql</artifactId>
+</dependency>
+....
 
+==== Datenbank (wie bei 01. Panache)
+* Erstellen/Starten der Postgres Datenbank:
+....
+docker run --name supermarket-postgres -p 5432:5432 -e POSTGRES_PASSWORD=passme -d postgres
+....
 
+* Für die Persistierung das link:quarkus-hibernate-supermarket\src\main\resources\META-INF\microprofile-config.properties[Konfigurationsfile] editieren.
+
+* Datasource in der IDE hinzufügen
+
+=== Implementierung des Microprojects
+TIP: Quelle: https://quarkus.io/guides/hibernate-orm
+
+==== InitBean
+Implementierung der link:quarkus-panache-supermarket\src\main\java\at\htl\supermarket\business\InitBean.java[InitBean.java]
+
+IMPORTANT: Hier wird der EntityManager benötigt <EntityManager>.persist(<Entity>);
+
+....
+
+....
