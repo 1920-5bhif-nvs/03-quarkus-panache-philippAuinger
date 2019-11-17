@@ -172,7 +172,7 @@ docker run --name supermarket-postgres -p 5432:5432 -e POSTGRES_PASSWORD=passme 
 TIP: Quelle: https://quarkus.io/guides/hibernate-orm
 
 ==== InitBean
-Implementierung der link:quarkus-panache-supermarket\src\main\java\at\htl\supermarket\business\InitBean.java[InitBean.java]
+Implementierung der link:quarkus-hibernate-supermarket\src\main\java\at\htl\supermarket\business\InitBean.java[InitBean.java]
 
 IMPORTANT: Hier wird der EntityManager benötigt <EntityManager>.persist(<Entity>);
 
