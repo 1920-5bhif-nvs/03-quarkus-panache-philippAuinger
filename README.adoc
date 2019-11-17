@@ -1,4 +1,7 @@
-== Quarkus-Panache (Übung 03) - Philipp Auinger 5BHIF
+= Quarkus-Panache (Übung 03) - Philipp Auinger 5BHIF
+
+:toc:
+
 == 01. Panache
 === Vorbereitung
 ==== Quarkus
@@ -109,6 +112,11 @@ Customer wird trotzdem in der Datenbank persistiert!
 ....
 
 IMPORTANT: Laut dieser link:https://stackoverflow.com/a/23083900[StackOverflow-Answer] ist es *WICHTIG* bei Tabellen-Namen im SQL-Statement die Anfangsbuchstaben Groß zu schreiben und alle anderen klein.
+
+=== Starten des Microprojects
+....
+mvn compile quarkus:dev
+....
 
 ==== Klassendiagramm und ERD der Panache-Lösung
 image::quarkus-panache-supermarket/Klassendiagramm.png[]
