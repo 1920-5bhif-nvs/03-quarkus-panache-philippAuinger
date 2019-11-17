@@ -1,7 +1,6 @@
 package at.htl.supermarket.business;
 
-import at.htl.supermarket.model.Cashier;
-import at.htl.supermarket.model.Customer;
+import at.htl.supermarket.model.*;
 import io.quarkus.runtime.StartupEvent;
 
 import javax.enterprise.context.ApplicationScoped;
