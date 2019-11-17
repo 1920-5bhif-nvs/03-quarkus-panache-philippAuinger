@@ -82,5 +82,9 @@ public class InitBean {
         em.persist(a);
         a = new Activity(LocalDateTime.parse("02.02.2018 21:40:55",time_formatter),1,chiquita_bananen,ca_cashier_1,c_stephan);
         em.persist(a);
+
+
+        em.createNamedQuery("Customer.getAll",Customer.class).getResultList()
+                .forEach(c -> System.err.println(c.getFirstname() + c.getLoyalty_points()));
     }
 }
