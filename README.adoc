@@ -10,7 +10,11 @@ endif::[]
 
 :source-highlighter: coderay
 :toc:
-Philipp Auinger <philipp-auinger@gmx.at>
+:toc-placement!: 
+:jbake-type: documentation
+:jbake-status: published
+
+toc::[]
 
 == 01. Panache
 === Vorbereitung
