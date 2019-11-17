@@ -9,7 +9,7 @@ ifdef::env-github[]
 endif::[]
 
 :source-highlighter: coderay
-:toc:
+toc::[]
 
 == 01. Panache
 === Vorbereitung
