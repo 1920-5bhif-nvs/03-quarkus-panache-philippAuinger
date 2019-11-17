@@ -1,5 +1,5 @@
 = Übung 03 - Quarkus-Panache - Philipp Auinger 5BHIF
-:toc: left1
+:toc: left
 :toc-title: Inhaltsverzeichnis
 :toclevels: 3
 
