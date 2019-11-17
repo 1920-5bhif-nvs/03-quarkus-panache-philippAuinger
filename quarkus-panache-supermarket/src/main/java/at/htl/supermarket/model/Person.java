@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
-public class Person extends PanacheEntity {
+public abstract class Person extends PanacheEntity {
 
     public String firstname;
     public String lastname;

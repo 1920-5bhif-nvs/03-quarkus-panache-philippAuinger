@@ -1,5 +1,5 @@
 == Quarkus-Panache (Übung 03) - Philipp Auinger 5BHIF
-
+== 01. Panache
 === Vorbereitung
 ==== Quarkus
 * Erstellen des Quarkus-Projekts mit:
@@ -13,10 +13,6 @@
 
 * Hinzufügen der nötigen Dependencies für diese Aufgabe im link:\quarkus-panache-supermarket\pom.xml[pom.xml]
 ....
-<dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-hibernate-orm</artifactId>
-</dependency>
 <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-orm-panache</artifactId>
@@ -57,6 +53,12 @@ image::images/IDEDatabase.PNG[]
 ==== InitBean
 Implementierung der link:quarkus-panache-supermarket\src\main\java\at\htl\supermarket\business\InitBean.java[InitBean.java]
 
+TIP: Der EntityManager wird nicht mehr benötigt. <PanacheEntity-Object>.persist();
+....
+        Product innocent_greensmoothie = new Product("Green Smoothie", 2.26, LocalDate.parse("19.12.2018",formatter), "Innocent",10,store);
+        innocent_greensmoothie.persist();
+....
+
 ==== Panache Entitäten
 TIP: Quelle: https://quarkus.io/guides/hibernate-orm-panache
 
@@ -84,3 +86,5 @@ public class Person extends PanacheEntity {
 ....
 
 IMPORTANT: Bei Panache sollte man laut Tutorial keine Getter und Setter verwenden sondern die Felder public machen, außer man will die Daten zum Beispiel im GETTER verändern. (.toUpperCase bei Namen, usw.)
+
+== 02. Hibernate
