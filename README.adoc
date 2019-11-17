@@ -255,3 +255,18 @@ mvn compile quarkus:dev
 
 ==== Klassendiagramm und ERD der Hibernate-Lösung
 Bleibt gleich wie bei der Panache-Lösung.
+
+== 03. Fazit Panache vs. Hibernate
+Da in meinem Einsatzgebiet die Funktionaliät beider Technologien gleich gut ist muss ich auf die "Einfachheit" eingehen.
+
+==== Panache Vorteile:
+
+* Nicht nötig eine ID zu erstellen
+* SQL Statements können einfach umgesetzt werden
+** Funktionen wie <Entity>.findAll() und <Entity>.find()
+* EntityManager wird nicht benötigt
+* Persönliche Meinung: es ist übersichtlicher
+
+
+== 04. Testen der Datenbank
+
