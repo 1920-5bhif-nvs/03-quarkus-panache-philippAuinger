@@ -9,7 +9,8 @@ ifdef::env-github[]
 endif::[]
 
 :source-highlighter: coderay
-toc::[]
+:toc:
+Philipp Auinger <philipp-auinger@gmx.at>
 
 == 01. Panache
 === Vorbereitung
