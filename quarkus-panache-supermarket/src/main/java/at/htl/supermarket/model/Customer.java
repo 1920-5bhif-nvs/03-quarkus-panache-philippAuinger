@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "CUSTOMER")
 public class Customer extends Person {
     public LocalDate accession_date;
     public int loyalty_points;
