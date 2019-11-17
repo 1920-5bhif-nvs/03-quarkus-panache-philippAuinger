@@ -98,6 +98,5 @@ public class InitBean {
 
         PanacheQuery<Customer> query = Customer.find("SELECT c FROM Customer c JOIN Person p on c.id = p.id");
         query.list().forEach(c -> System.err.print(c.toString()));
-        Customer.find
     }
 }

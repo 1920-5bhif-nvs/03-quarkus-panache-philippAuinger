@@ -1,5 +1,5 @@
 = Übung 03 - Quarkus-Panache - Philipp Auinger 5BHIF
-:toc: left
+:toc:
 :toc-title: Inhaltsverzeichnis
 :toclevels: 3
 
@@ -269,4 +269,19 @@ Da in meinem Einsatzgebiet die Funktionaliät beider Technologien gleich gut ist
 
 
 == 04. Testen der Datenbank
+
+TIP: Quelle: https://assertj.github.io/doc
+
+=== Vorbereitung
+==== Maven
+* Hinzufügen der nötigen Dependencies für diese Aufgabe im link:\quarkus-panache-supermarket\pom.xml[pom.xml]
+....
+<dependency>
+  <groupId>org.assertj</groupId>
+  <artifactId>assertj-core</artifactId>
+  <!-- use 2.9.1 for Java 7 projects -->
+  <version>3.14.0</version>
+  <scope>test</scope>
+</dependency>
+....
 
