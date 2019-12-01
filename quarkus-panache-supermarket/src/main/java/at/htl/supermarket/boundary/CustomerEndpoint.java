@@ -19,6 +19,7 @@ public class CustomerEndpoint {
 
     @GET
     @Path("loyality")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getAllSortedByLoyality(){
         List<Customer> responseList = customerRepository.getAllSortedByLoyalityPoints();
         if(responseList!=null) {
