@@ -357,3 +357,12 @@ Alle Tests:
 
 image::images/datatests.png[]
 
+== 05. Use-Cases
+
+=== 1. Use-Case
+Als Supermarkt-Manager will ich eine Übersicht aller Kunden sehen die nach Anzahl der Treuepunkte sortiert sind.
+
+=== 2. Use-Case
+
+
+=== 3. Use-Case
