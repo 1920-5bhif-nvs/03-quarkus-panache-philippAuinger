@@ -70,4 +70,11 @@ public class StructureDatabaseTest {
         assertThat(table).column("customer_id").isNumber(true);
         assertThat(table).column("product_id").isNumber(true);
     }
+
+    @Test
+    public void test06TableStorage(){
+        Table table = new Table(source, "storage");
+
+        assertThat(table).column("id").isNumber(true);
+    }
 }
