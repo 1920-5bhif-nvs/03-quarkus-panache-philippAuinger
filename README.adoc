@@ -366,4 +366,4 @@ Als Supermarkt-Manager will ich eine Übersicht aller Kunden sehen die nach Anza
 Als Supermarkt-Manager will ich alle verkauften Produkte, sortiert nach dem Verkaufsdatum, sehen.
 
 === 3. Use-Case
-Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war sehen. 
+Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war sehen.
