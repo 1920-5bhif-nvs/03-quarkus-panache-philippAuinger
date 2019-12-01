@@ -25,4 +25,15 @@ public class StructureDatabaseTest {
         assertThat(table).column("mobilephone").isText(true);
         assertThat(table).column("birthdate").isDate(true);
     }
+
+    @Test
+    public void test02TableCustomer(){
+        Table table = new Table(source, "customer");
+
+        assertThat(table).column("id").isNumber(true);
+        assertThat(table).column("accession_date").isDate(true);
+        assertThat(table).column("card_number").isNumber(true);
+        assertThat(table).column("loyalty_points").isNumber(true);
+        assertThat(table).column("rank").isText(true);
+    }
 }
