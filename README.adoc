@@ -285,3 +285,32 @@ TIP: Quelle: https://assertj.github.io/doc
 </dependency>
 ....
 
+Ich habe leider die Erfahrung machen müssen das meine link:\quarkus-panache-supermarket\pom.xml[pom.xml] lange nicht gepasst hat, nun funktioniert diese Version auch mit Tests!
+
+=== Tests
+
+==== Basic-Tests
+Implementierung von link:quarkus-hibernate-supermarket\src\test\java\at\htl\supermarket\BasicDatabaseTest.java[StructureDatabaseTest.java]
+
+Beispiel für einen ersten Test:     
+....
+@QuarkusTest
+public class StructureDatabaseTest {
+
+
+    Source source = new Source("jdbc:postgresql://192.168.99.100:5432/postgres", "postgres", "passme");
+
+    @Test
+    public void test01TablePerson(){
+        Table table = new Table(source, "person");
+
+        assertThat(table).column("id").isNumber(true);
+        assertThat(table).column("dtype").isText(true);
+        assertThat(table).column("email").isText(true);
+        assertThat(table).column("firstname").isText(true);
+        assertThat(table).column("lastname").isText(true);
+        assertThat(table).column("mobilephone").isText(true);
+        assertThat(table).column("birthdate").isDate(true);
+    }
+}
+....
