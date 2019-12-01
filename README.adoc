@@ -317,3 +317,27 @@ public class StructureDatabaseTest {
 }
 ....
 
+image::images/structure-test.png[]
+
+==== Data-Tests
+Implementierung von link:quarkus-hibernate-supermarket\src\test\java\at\htl\supermarket\DataDatabaseTest.java[DataDatabaseTest.java]
+
+TIP: Diese Tests testen ob einige Daten in den Tabellen richtig eingefügt wurden.
+
+Beispiel für solch einen Test:     
+....
+@Test
+public void test01PersonData(){
+    Table person = new Table(source, "person");
+    assertThat(person).hasNumberOfRows(6);
+
+    assertThat(person).column("firstname")
+            .hasValues(
+                    "Susanna",
+                    "Bernd",
+                    "Philipp",
+                    "Nenad",
+                    "Susanna",
+                    "Stephan");
+}
+....
