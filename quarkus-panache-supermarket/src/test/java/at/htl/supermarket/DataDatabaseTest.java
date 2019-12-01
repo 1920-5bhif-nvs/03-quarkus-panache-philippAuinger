@@ -43,12 +43,27 @@ public class DataDatabaseTest {
     @Test
     public void test03CashierData(){
         Table cashier = new Table(source, "cashier");
-        assertThat(cashier).hasNumberOfRows(4);
+        assertThat(cashier).hasNumberOfRows(2);
 
         //also testing inheritance
         assertThat(cashier).column("salary")
                 .hasValues(
                         2300.2,
                         1000.99);
+    }
+
+    @Test
+    public void test04ProductData(){
+        Table cashier = new Table(source, "product");
+        assertThat(cashier).hasNumberOfRows(5);
+
+        //also testing inheritance
+        assertThat(cashier).column("brand")
+                .hasValues(
+                        "Innocent",
+                        "Chiquita",
+                        "Green",
+                        "Clever",
+                        "SBudget");
     }
 }
