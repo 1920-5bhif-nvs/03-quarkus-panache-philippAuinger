@@ -33,7 +33,7 @@ public class StructureDatabaseTest {
         assertThat(table).column("id").isNumber(true);
         assertThat(table).column("accession_date").isDate(true);
         assertThat(table).column("card_number").isNumber(true);
-        assertThat(table).column("loyalty_points").isNumber(true);
+        assertThat(table).column("loyality_points").isNumber(true);
         assertThat(table).column("rank").isText(true);
     }
 
