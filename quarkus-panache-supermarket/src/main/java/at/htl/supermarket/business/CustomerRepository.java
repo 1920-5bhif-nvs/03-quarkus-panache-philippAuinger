@@ -11,7 +11,7 @@ import java.util.List;
 public class CustomerRepository implements PanacheRepository<Customer> {
 
     public List<Customer> getAllSortedByLoyalityPoints(){
-        return findAll(Sort.by("loyality_points")).list(); 
+        return findAll(Sort.by("loyality_points")).list();
     }
 
 }
