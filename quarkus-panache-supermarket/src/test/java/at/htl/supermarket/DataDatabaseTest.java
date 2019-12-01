@@ -25,4 +25,18 @@ public class DataDatabaseTest {
                         "Susanna",
                         "Stephan");
     }
+
+    @Test
+    public void test02CustomerData(){
+        Table customer = new Table(source, "customer");
+        assertThat(customer).hasNumberOfRows(4);
+
+        //also testing inheritance
+        assertThat(customer).column("rank")
+                .hasValues(
+                        "Newbie",
+                        "Friend",
+                        "Normal",
+                        "Normal");
+    }
 }
