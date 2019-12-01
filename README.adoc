@@ -363,6 +363,6 @@ image::images/datatests.png[]
 Als Supermarkt-Manager will ich eine Übersicht aller Kunden sehen die nach Anzahl der Treuepunkte sortiert sind.
 
 === 2. Use-Case
-
+Als Supermarkt-Manager will ich alle verkauften Produkte, sortiert nach dem Verkaufsdatum, sehen.
 
 === 3. Use-Case
