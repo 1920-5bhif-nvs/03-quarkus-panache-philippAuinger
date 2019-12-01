@@ -362,6 +362,8 @@ image::images/datatests.png[]
 === 1. Use-Case
 Als Supermarkt-Manager will ich eine Übersicht aller Kunden sehen die nach Anzahl der Treuepunkte sortiert sind.
 
+TIP: Zugriff: http://localhost:8080/customer/loyality
+
 === 2. Use-Case
 Als Supermarkt-Manager will ich alle verkauften Produkte, sortiert nach dem Verkaufsdatum, sehen.
 
