@@ -66,4 +66,21 @@ public class DataDatabaseTest {
                         "Clever",
                         "SBudget");
     }
+
+    @Test
+    public void test05ActivityData(){
+        Table cashier = new Table(source, "activity");
+        assertThat(cashier).hasNumberOfRows(7);
+
+        //also testing inheritance
+        assertThat(cashier).column("cashdesk")
+                .hasValues(
+                        2,
+                        2,
+                        1,
+                        1,
+                        1,
+                        2,
+                        1);
+    }
 }
