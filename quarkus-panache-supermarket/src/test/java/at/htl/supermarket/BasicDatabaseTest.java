@@ -1,15 +1,13 @@
-package at.htl.supermarket.database;
+package at.htl.supermarket;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.assertj.db.type.Source;
 import org.assertj.db.type.Table;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.db.api.Assertions.assertThat;
 
 @QuarkusTest
-@Tag("integration")
 public class BasicDatabaseTest {
     @Test
     public void firstConnection(){
@@ -17,6 +15,6 @@ public class BasicDatabaseTest {
         Table table = new Table(source, "person");
 
         assertThat(table).column("firstname")
-                .value().isEqualTo("Philipp");
+                .value().isEqualTo("Susanna");
     }
 }
