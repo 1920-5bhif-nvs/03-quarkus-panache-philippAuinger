@@ -289,10 +289,12 @@ Ich habe leider die Erfahrung machen müssen das meine link:\quarkus-panache-sup
 
 === Tests
 
-==== Basic-Tests
+==== Structure-Tests
 Implementierung von link:quarkus-hibernate-supermarket\src\test\java\at\htl\supermarket\BasicDatabaseTest.java[StructureDatabaseTest.java]
 
-Beispiel für einen ersten Test:     
+TIP: Diese Tests testen ob die alle Tabellen erstellt wurden und die einzelnen Spalten die richtigen Datentypen habe.
+
+Beispiel für solch einen Test:     
 ....
 @QuarkusTest
 public class StructureDatabaseTest {
@@ -314,3 +316,4 @@ public class StructureDatabaseTest {
     }
 }
 ....
+
