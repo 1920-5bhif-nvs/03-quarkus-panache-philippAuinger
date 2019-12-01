@@ -267,6 +267,15 @@ Da in meinem Einsatzgebiet die Funktionaliät beider Technologien gleich gut ist
 * EntityManager wird nicht benötigt
 * Persönliche Meinung: es ist übersichtlicher
 
+== Swagger-UI
+=== Installieren mit: 
+....
+mvn quarkus:add-extension -Dextensions="openapi"
+....
+=== Zugriff:
+....
+http://localhost:8080/swagger-ui/
+....
 
 == 04. Testen der Datenbank
 
