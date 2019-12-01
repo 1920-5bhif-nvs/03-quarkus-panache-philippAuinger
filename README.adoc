@@ -341,3 +341,7 @@ public void test01PersonData(){
                     "Stephan");
 }
 ....
+
+IMPORTANT: Beim testen mit "hasValues()" muss man die Tabellen nach der ersten Spalte in der Datenbank-Sicht sortieren.
+
+image::images/person.png[]
