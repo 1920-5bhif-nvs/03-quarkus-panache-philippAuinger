@@ -39,4 +39,16 @@ public class DataDatabaseTest {
                         "Normal",
                         "Normal");
     }
+
+    @Test
+    public void test03CashierData(){
+        Table cashier = new Table(source, "cashier");
+        assertThat(cashier).hasNumberOfRows(4);
+
+        //also testing inheritance
+        assertThat(cashier).column("salary")
+                .hasValues(
+                        2300.2,
+                        1000.99);
+    }
 }
