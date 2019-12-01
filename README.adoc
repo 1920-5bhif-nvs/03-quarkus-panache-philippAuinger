@@ -373,3 +373,7 @@ Als Supermarkt-Manager will ich alle verkauften Produkte, sortiert nach dem Verk
 
 === 3. Use-Case
 Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war sehen.
+
+=== Diagramm
+
+image::images/UseCaseDiagram.png[]
