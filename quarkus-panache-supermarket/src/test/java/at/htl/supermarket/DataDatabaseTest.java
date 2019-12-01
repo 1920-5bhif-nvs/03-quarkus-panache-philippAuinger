@@ -83,4 +83,16 @@ public class DataDatabaseTest {
                         2,
                         1);
     }
+
+    @Test
+    public void test06StorageData(){
+        Table cashier = new Table(source, "storage");
+        assertThat(cashier).hasNumberOfRows(2);
+
+        //also testing inheritance
+        assertThat(cashier).column("id")
+                .hasValues(
+                        1,
+                        2);
+    }
 }
