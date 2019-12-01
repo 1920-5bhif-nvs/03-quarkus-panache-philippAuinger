@@ -58,4 +58,16 @@ public class StructureDatabaseTest {
         assertThat(table).column("quantity").isNumber(true);
         assertThat(table).column("storage_id").isNumber(true);
     }
+
+    @Test
+    public void test05TableActivity(){
+        Table table = new Table(source, "activity");
+
+        assertThat(table).column("id").isNumber(true);
+        assertThat(table).column("cashdesk").isNumber(true);
+        //assertThat(table).column("time").isTime(true);
+        assertThat(table).column("cashier_id").isNumber(true);
+        assertThat(table).column("customer_id").isNumber(true);
+        assertThat(table).column("product_id").isNumber(true);
+    }
 }
