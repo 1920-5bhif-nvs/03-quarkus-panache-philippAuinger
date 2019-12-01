@@ -36,4 +36,13 @@ public class StructureDatabaseTest {
         assertThat(table).column("loyalty_points").isNumber(true);
         assertThat(table).column("rank").isText(true);
     }
+
+    @Test
+    public void test03TableCashier(){
+        Table table = new Table(source, "cashier");
+
+        assertThat(table).column("id").isNumber(true);
+        assertThat(table).column("salary").isNumber(true);
+        assertThat(table).column("begin_date").isDate(true);
+    }
 }
