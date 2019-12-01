@@ -45,4 +45,17 @@ public class StructureDatabaseTest {
         assertThat(table).column("salary").isNumber(true);
         assertThat(table).column("begin_date").isDate(true);
     }
+
+    @Test
+    public void test04TableProduct(){
+        Table table = new Table(source, "product");
+
+        assertThat(table).column("id").isNumber(true);
+        assertThat(table).column("best_before_date").isDate(true);
+        assertThat(table).column("brand").isText(true);
+        assertThat(table).column("name").isText(true);
+        assertThat(table).column("price").isNumber(true);
+        assertThat(table).column("quantity").isNumber(true);
+        assertThat(table).column("storage_id").isNumber(true);
+    }
 }
