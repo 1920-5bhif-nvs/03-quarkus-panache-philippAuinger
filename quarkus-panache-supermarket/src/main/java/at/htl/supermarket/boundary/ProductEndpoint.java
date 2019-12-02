@@ -21,11 +21,12 @@ public class ProductEndpoint {
     @GET
     @Path("soldProducts/{cashier_lastname}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSoldProductsSorted(@PathParam String cashier_lastname) {
+    public Response getSoldProductsSorted(@PathParam("cashier_lastname") String cashier_lastname) {
+        List<Activity> responseList;
         if(cashier_lastname == null){
-            List<Activity> responseList = activityRepository.getSoldProductsSortedByDate();
+            responseList = activityRepository.getSoldProductsSortedByDate();
         } else {
-            List<Activity> responseList = activityRepository.getSoldProductsByCashier();
+            responseList = activityRepository.getSoldProductsByCashier(cashier_lastname);
         }
         return Response.ok().entity(responseList).build();
     }
