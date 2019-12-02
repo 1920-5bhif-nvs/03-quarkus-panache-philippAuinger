@@ -19,15 +19,25 @@ public class ProductEndpoint {
     ActivityRepository activityRepository;
 
     @GET
+    @Path("soldProducts")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSoldProductsSorted() {
+        List<Activity> responseList;
+        responseList = activityRepository.getSoldProductsSortedByDate();
+
+        return Response.ok().entity(responseList).build();
+    }
+
+    @GET
     @Path("soldProducts/{cashier_lastname}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSoldProductsSorted(@PathParam("cashier_lastname") String cashier_lastname) {
+    public Response getSoldProductsByCashierLastname(@PathParam("cashier_lastname") String cashier_lastname){
         List<Activity> responseList;
-        if(cashier_lastname == null){
-            responseList = activityRepository.getSoldProductsSortedByDate();
+        responseList = activityRepository.getSoldProductsByCashier(cashier_lastname);
+        if(responseList.size() > 0){
+            return Response.ok().entity(responseList).build();
         } else {
-            responseList = activityRepository.getSoldProductsByCashier(cashier_lastname);
+            return Response.noContent().build();
         }
-        return Response.ok().entity(responseList).build();
     }
 }
