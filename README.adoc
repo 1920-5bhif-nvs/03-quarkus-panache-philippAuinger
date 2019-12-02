@@ -378,6 +378,10 @@ Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war abf
 
 TIP: Zugriff: http://localhost:8080/product/soldProducts/Geld
 
+=== 4. Use-Case
+
+
+
 === Diagramm
 
 image::images/UseCaseDiagram.png[]
