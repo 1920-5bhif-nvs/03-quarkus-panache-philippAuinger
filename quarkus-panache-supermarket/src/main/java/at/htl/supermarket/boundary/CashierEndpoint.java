@@ -39,4 +39,12 @@ public class CashierEndpoint {
         Cashier updatedCashier = cashierRepository.update(cashier);
         return Response.ok().entity(updatedCashier).build();
     }
+
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response deleteCashier(Cashier cashier){
+        cashierRepository.delete(cashier);
+        return Response.ok().build();
+    }
 }
