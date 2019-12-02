@@ -94,7 +94,11 @@ public class CashierEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deleteCashier(Cashier cashier){
-        cashierRepository.delete(cashier);
-        return Response.ok().build();
+        Cashier deletedCashier = cashierRepository.deleteCashier(cashier);
+        if(deletedCashier != null) {
+            return Response.ok().build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 }
