@@ -376,7 +376,7 @@ TIP: Zugriff: http://localhost:8080/product/soldProducts
 === 3. Use-Case
 Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war abfragen.
 
-TIP: Zugriff: 
+TIP: Zugriff: http://localhost:8080/product/soldProducts/Geld
 
 === Diagramm
 
