@@ -12,4 +12,9 @@ public class CashierRepository implements PanacheRepository<Cashier> {
         persistAndFlush(newCashier);
         return findById(newCashier.id);
     }
+
+    public Cashier update(Cashier updatedCashier){
+        this.save(updatedCashier);
+        return findById(updatedCashier.id);
+    }
 }
