@@ -379,8 +379,11 @@ Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war abf
 TIP: Zugriff: http://localhost:8080/product/soldProducts/Geld
 
 === 4. Use-Case
+Als Supermarkt-Manager will ich Mitarbeiter-Daten (Cashier) neu anlegen, bearbeiten und löschen.
 
+TIP: Zugriff: http://localhost:8080/cashier/getAll (@GET)
 
+IMPORTANT: Zugriffe: http://localhost:8080/cashier (@POST, @PUT, @DELETE)
 
 === Diagramm
 
