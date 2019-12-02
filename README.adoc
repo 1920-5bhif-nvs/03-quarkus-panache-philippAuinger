@@ -371,8 +371,12 @@ TIP: Zugriff: http://localhost:8080/customer/loyality
 === 2. Use-Case
 Als Supermarkt-Manager will ich alle verkauften Produkte, sortiert nach dem Verkaufsdatum, sehen.
 
+TIP: Zugriff: http://localhost:8080/product/soldProducts
+
 === 3. Use-Case
 Als Supermarkt-Mitarbeiter will ich die Verkäufe an denen ich beteiligt war sehen.
+
+TIP: Zugriff: 
 
 === Diagramm
 
