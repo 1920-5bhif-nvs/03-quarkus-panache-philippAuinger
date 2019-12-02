@@ -4,6 +4,7 @@ import at.htl.supermarket.model.Cashier;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.util.List;
 
 @ApplicationScoped
 public class CashierRepository implements PanacheRepository<Cashier> {
@@ -20,5 +21,9 @@ public class CashierRepository implements PanacheRepository<Cashier> {
 
     public void delete(Cashier toDeleteCashier){
         delete(toDeleteCashier);
+    }
+
+    public List<Cashier> getAll(){
+        return findAll().list();
     }
 }
