@@ -53,7 +53,24 @@ public class CashierEndpoint {
     }
 
     /*
-
+    {
+        "id": 12,
+        "firstname": "Susanna",
+        "lastname": "Moneten",
+        "birthdate": [
+            1999,
+            7,
+            5
+        ],
+        "mobilePhone": "+66 43242342",
+        "email": "",
+        "begin_date": [
+            2000,
+            1,
+            1
+        ],
+        "salary": 2300.2
+    }
      */
 
     @PUT
