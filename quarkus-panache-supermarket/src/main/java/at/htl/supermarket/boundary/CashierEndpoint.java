@@ -31,4 +31,12 @@ public class CashierEndpoint {
         Cashier newCashier = cashierRepository.save(cashier);
         return Response.ok().entity(newCashier).build();
     }
+
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response putCashier(Cashier cashier){
+        Cashier updatedCashier = cashierRepository.update(cashier);
+        return Response.ok().entity(updatedCashier).build();
+    }
 }
