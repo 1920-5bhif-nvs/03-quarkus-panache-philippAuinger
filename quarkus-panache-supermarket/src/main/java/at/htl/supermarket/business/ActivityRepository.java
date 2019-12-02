@@ -16,6 +16,6 @@ public class ActivityRepository implements PanacheRepository<Activity> {
 
     public List<Activity> getSoldProductsByCashier(String lastname){
         Cashier searchedCashier = Cashier.find("lastname",lastname).firstResult();
-        return find("Cashier = ?1", searchedCashier).list();
+        return find("cashier_id = ?1", searchedCashier.id).list();
     }
 }
