@@ -359,7 +359,20 @@ image::images/datatests.png[]
 
 == 05. Mocking
 
+=== Vorbereitung
+==== Maven
+* Hinzufügen der nötigen Dependencies für das Mocking im link:\quarkus-panache-supermarket\pom.xml[pom.xml]
+....
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-all</artifactId>
+    <version>1.9.5</version>
+    <scope>test</scope>
+</dependency>
+....
 
+=== Erster Mock:
+Implementierung von link:quarkus-hibernate-supermarket\src\test\java\at\htl\supermarket\DatabaseMock.java[DatabaseMock.java]
 
 == 06. Use-Cases
 
