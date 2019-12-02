@@ -6,6 +6,7 @@ import at.htl.supermarket.model.Activity;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -18,11 +19,14 @@ public class ProductEndpoint {
     ActivityRepository activityRepository;
 
     @GET
-    @Path("soldProducts")
+    @Path("soldProducts/{cashier_lastname}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSoldProductsSorted(){
-        List<Activity> responseList = activityRepository.getSoldProductsSortedByDate();
-
+    public Response getSoldProductsSorted(@PathParam String cashier_lastname) {
+        if(cashier_lastname == null){
+            List<Activity> responseList = activityRepository.getSoldProductsSortedByDate();
+        } else {
+            List<Activity> responseList = activityRepository.getSoldProductsByCashier();
+        }
         return Response.ok().entity(responseList).build();
     }
 }
