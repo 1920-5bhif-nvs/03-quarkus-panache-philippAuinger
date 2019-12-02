@@ -15,12 +15,22 @@ public class CashierRepository implements PanacheRepository<Cashier> {
     }
 
     public Cashier update(Cashier updatedCashier){
-        this.save(updatedCashier);
-        return findById(updatedCashier.id);
+        Cashier persistedCashier = findById(updatedCashier.id);
+        if(persistedCashier != null) {
+            persistedCashier.begin_date = updatedCashier.begin_date;
+            persistedCashier.birthdate = updatedCashier.birthdate;
+            persistedCashier.email = updatedCashier.email;
+            persistedCashier.firstname = updatedCashier.firstname;
+            persistedCashier.lastname = updatedCashier.lastname;
+            persistedCashier.mobilePhone = updatedCashier.mobilePhone;
+            persistedCashier.salary = updatedCashier.salary;
+        }
+
+        return persistedCashier;
     }
 
     public void delete(Cashier toDeleteCashier){
-        delete(toDeleteCashier);
+        this.delete("id = ?1",toDeleteCashier.id);
     }
 
     public List<Cashier> getAll(){

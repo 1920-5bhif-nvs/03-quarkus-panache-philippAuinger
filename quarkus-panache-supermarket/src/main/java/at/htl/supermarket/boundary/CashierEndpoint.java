@@ -4,12 +4,14 @@ import at.htl.supermarket.business.CashierRepository;
 import at.htl.supermarket.model.Cashier;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("cashier")
+@Transactional
 public class CashierEndpoint {
 
     @Inject
@@ -23,7 +25,25 @@ public class CashierEndpoint {
         responseList = cashierRepository.getAll();
         return Response.ok().entity(responseList).build();
     }
-
+    /*
+    {
+        "firstname": "Philipp",
+        "lastname": "Geld",
+        "birthdate": [
+            2000,
+            12,
+            13
+        ],
+        "mobilePhone": "+66 43242342",
+        "email": "",
+        "begin_date": [
+            2019,
+            2,
+            12
+        ],
+        "salary": 2999.1
+    }
+    */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -32,6 +52,10 @@ public class CashierEndpoint {
         return Response.ok().entity(newCashier).build();
     }
 
+    /*
+
+     */
+
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -39,6 +63,28 @@ public class CashierEndpoint {
         Cashier updatedCashier = cashierRepository.update(cashier);
         return Response.ok().entity(updatedCashier).build();
     }
+
+    /*
+    {
+        "id": 21,
+        "firstname": "Philipp",
+        "lastname": "Geld",
+        "birthdate": [
+            2000,
+            12,
+            13
+        ],
+        "mobilePhone": "+66 43242342",
+        "email": "",
+        "begin_date": [
+            2019,
+            2,
+            12
+        ],
+        "salary": 2999.1,
+        "persistent": false
+    }
+    */
 
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
