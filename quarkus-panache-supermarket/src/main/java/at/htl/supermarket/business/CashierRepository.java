@@ -29,8 +29,12 @@ public class CashierRepository implements PanacheRepository<Cashier> {
         return persistedCashier;
     }
 
-    public void delete(Cashier toDeleteCashier){
-        this.delete("id = ?1",toDeleteCashier.id);
+    public Cashier deleteCashier(Cashier toDeleteCashier){
+        Cashier persistedCashier = findById(toDeleteCashier.id);
+        if(persistedCashier != null) {
+            this.delete("id = ?1", toDeleteCashier.id);
+        }
+        return persistedCashier;
     }
 
     public List<Cashier> getAll(){

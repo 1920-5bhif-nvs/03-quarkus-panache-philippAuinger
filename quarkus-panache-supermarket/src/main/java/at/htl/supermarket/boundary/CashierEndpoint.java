@@ -61,7 +61,11 @@ public class CashierEndpoint {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response putCashier(Cashier cashier){
         Cashier updatedCashier = cashierRepository.update(cashier);
-        return Response.ok().entity(updatedCashier).build();
+        if(updatedCashier != null) {
+            return Response.ok().entity(updatedCashier).build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     /*
