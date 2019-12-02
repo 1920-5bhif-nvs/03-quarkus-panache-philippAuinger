@@ -372,7 +372,37 @@ image::images/datatests.png[]
 ....
 
 === Erster Mock:
+
+TIP: genutztes Tutorial: https://examples.javacodegeeks.com/core-java/mockito/mockito-mock-database-connection-example/
+
 Implementierung von link:quarkus-hibernate-supermarket\src\test\java\at\htl\supermarket\DatabaseMock.java[DatabaseMock.java]
+
+....
+public class DatabaseMock {
+    @InjectMocks
+    private DBConnection dbConnection;
+    @Mock
+    private Connection mockConnection;
+    @Mock
+    private Statement mockStatement;
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void testMockDBConnection() throws Exception {
+        Mockito.when(mockConnection.createStatement()).thenReturn(mockStatement);
+        Mockito.when(mockConnection.createStatement().executeUpdate(Mockito.any())).thenReturn(1);
+        int value = dbConnection.executeQuery("");
+        Assertions.assertEquals(value,1);
+        Mockito.verify(mockConnection.createStatement(), Mockito.times(1));
+    }
+}
+....
+
+
 
 == 06. Use-Cases
 
